@@ -1,0 +1,11 @@
+<div class="container-fluid">
+  <app-navbar (toggleSidebar)="toggleSidebar()"></app-navbar>
+  <div class="main-container d-flex">
+    <div>
+      <app-sidebar [isHidden]="isHidden"></app-sidebar>
+    </div>
+    <div class="main">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+// .sidebar-toggle{
+//   font-size: 30px;
+//   color: #777;
+//   cursor: pointer;
+// }
+
+.nav {
+  background-color: #fff !important;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+.note-icon{
+  font-size: 40px;
+  color: #ffb900;
+  cursor: pointer;
+}
+
+.input-container {
+  position: relative;
+}
+
+.input-container {
+  i {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      color: #5f6368;
+      padding: 10px;
+      &:hover{
+        background-color: #dfdcdc;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+    }
+
+}
+
+.input-container{
+  input{
+    width: 100%;
+    padding: 10px 10px 10px 50px ;
+    background-color: #f0f3f4;
+    &:focus {
+        background-color: #fff;
+
+      }
+  }
+}
+
+.main {
+  .icon-toggle {
+    cursor: pointer;
+    font-size:15px;
+    margin-right: 10px;
+    padding: 10px;
+    color: #777;
+    &:hover {
+      background-color: #eee;
+      border-radius: 50%;
+    }
+  }
+}
+
