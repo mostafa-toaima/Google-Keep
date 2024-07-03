@@ -7,7 +7,7 @@ import { MainComponent } from './main/main.component';
 const routes: Routes = [
   {
     path: 'main',
-    component: MainComponent, title: 'Main',
+    component: MainComponent, title: 'mostaafa',
     children: [
       { path: '', redirectTo: 'notes', pathMatch: 'full' },
       { path: 'notes', component: NotesComponent, title: 'notes' },
