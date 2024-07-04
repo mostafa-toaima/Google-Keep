@@ -1,1 +1,59 @@
-<p>notes works</p>
+<div>
+  <div class="row">
+    <div class="w-50 mx-auto">
+      <div class="add-note">
+        <div class="header"></div>
+        <div class="footer">
+          <button class="btn btn-add">Add</button>
+          <button
+            type="button"
+            class="btn btn-primary"
+            tooltip="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
+          >
+            Simple demo
+          </button>
+
+
+          <button type="button" class="btn btn-primary" (click)="openModal(modal) ></button>
+
+          <ng-template #modal>
+            <div class="modal-header">
+              <h4 class="modal-title pull-left">Modal</h4>
+              <button
+                type="button"
+                class="btn-close close pull-right"
+                aria-label="Close"
+                (click)="modalRef?.hide()"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+              </div>
+            <div class="modal-body">This is a modal</div>
+          </ng-template>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <h3 *ngIf="Notes.length == 0" class="text-center py-4">No notes found</h3>
+    <div class="col-md-3 col-sm-6">
+      <h2 *ngIf="Notes.length > 0">Notes</h2>
+      <div class="note-box" *ngFor="let note of Notes">
+        <div class="note-header">
+          <h5 class="text-center w-100 p-2">{{ note.title }}</h5>
+        </div>
+        <div class="note-body">
+          <div placeholder="Write your note here...">
+            {{ note.description }}
+          </div>
+        </div>
+        <div class="note-footer d-flex justify-content-between">
+          <button class="btn btn-edit">Edit</button>
+          <button class="btn btn-complete">Complete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

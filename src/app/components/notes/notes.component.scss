@@ -1,1 +1,61 @@
 
+
+.note-box {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 240px;
+  overflow: hidden;
+
+  h5 {
+    border: 1px solid #cfcbcb;
+    background-color: #eee;
+  }
+  .note-body {
+    padding: 10px;
+    margin-top: 10px;
+    min-height: 3px; // Adjust the min-height based on your design
+    div[contenteditable] {
+      border:none;
+      padding: 10px;
+      overflow-y: auto;
+      &:focus{
+        outline: none;
+      }
+    }
+
+  }
+
+  .note-footer{
+    background-color: #eee;
+    padding: 5px;
+
+    .btn {
+      border: 1px solid #ddd;
+      padding: 2px 10px;
+      width: 100px;
+      transition: scale 0.4s, transform 1s, opacity 0.5s;      position: relative;
+      opacity: 0;
+      transform: translateY(100%);
+      &:hover{
+        scale: 1.1;
+      }
+    }
+    .btn-edit{
+      background-color: #56ccb8 ;
+      color: #fff;
+    }
+    .btn-complete{
+      background-color: #e6c76b ;
+      color: #fff;
+    }
+  }
+
+
+  &:hover .note-footer .btn{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
