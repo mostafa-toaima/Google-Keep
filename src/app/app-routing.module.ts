@@ -5,11 +5,13 @@ import { RemindersComponent } from './components/reminders/reminders.component';
 import { MainComponent } from './main/main.component';
 
 const routes: Routes = [
+  {path:'', redirectTo:'main',pathMatch:'full'},
   {
+  
     path: 'main',
     component: MainComponent, title: 'mostafa',
     children: [
-      { path: '', redirectTo: 'notes', pathMatch: 'full' },
+      
       { path: 'notes', component: NotesComponent, title: 'notes' },
       { path: 'reminders', component: RemindersComponent, title: 'reminders' },
     ],

@@ -1,1 +1,25 @@
-<p>notes works</p>
+
+
+<gridster [options]="options">
+    <div contenteditable>
+        type here...
+    </div>
+    <gridster-item [item]="this.item1" #gridsterItem>
+          <div class="item1 p-5">
+            <img ngSrc="images/cat.jpg" alt="cat" priority>
+          </div>
+          
+          
+        
+    </gridster-item>
+	
+    <gridster-item class="p-5" [item]="this.item2" #gridsterItem>
+        <h3 class="h3-item">helloo</h3>
+        <p class="p-item">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+        <button class="btn-item">ok</button>
+     
+    </gridster-item>
+
+	
+  
+</gridster>

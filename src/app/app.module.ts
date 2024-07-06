@@ -8,6 +8,9 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NotesComponent } from './components/notes/notes.component';
 import { RemindersComponent } from './components/reminders/reminders.component';
 import { MainComponent } from './main/main.component';
+import {GridsterComponent, GridsterItemComponent} from 'angular-gridster2';
+import { HomeComponent } from './home/home.component';
+import { NgOptimizedImage } from '@angular/common'
 
 @NgModule({
   declarations: [
@@ -17,8 +20,9 @@ import { MainComponent } from './main/main.component';
     NotesComponent,
     RemindersComponent,
     MainComponent,
+    HomeComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule,GridsterComponent,GridsterItemComponent,NgOptimizedImage],
   providers: [],
   bootstrap: [AppComponent],
 })

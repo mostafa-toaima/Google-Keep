@@ -1,1 +1,23 @@
 
+div[contenteditable]{
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 3px;
+    min-height: 150px;
+    max-height: auto;
+    overflow: auto;
+    width: 25%;
+    background-color: #000;
+    color: #fff;
+}
+gridster-item{
+   border: 1px thick #000;
+    border-radius: 5px;
+
+   
+}
+gridster{
+   background-color: #d1d1d1;
+     border-radius: 5px;
+    
+ }
