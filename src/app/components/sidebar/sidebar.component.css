@@ -3,7 +3,7 @@
   position: relative;
   width: 300px;
   margin-right: 30px;
-  min-height: calc(100vh - 74px);
+  min-height: 100vh;
   box-shadow: 2px 2px 3px #c5c4c4;
 }
 .nav-items .nav-item {

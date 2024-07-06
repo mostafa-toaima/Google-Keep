@@ -1,57 +1,45 @@
-<div>
-  <div class="row">
-    <div class="w-50 mx-auto">
-      <div class="add-note">
-        <div class="header"></div>
-        <div class="footer">
-          <button class="btn btn-add">Add</button>
-          <button
-            type="button"
-            class="btn btn-primary"
-            tooltip="Vivamus sagittis lacus vel augue laoreet rutrum faucibus."
-          >
-            Simple demo
-          </button>
-
-
-          <button type="button" class="btn btn-primary" (click)="openModal(modal) ></button>
-
-          <ng-template #modal>
-            <div class="modal-header">
-              <h4 class="modal-title pull-left">Modal</h4>
-              <button
-                type="button"
-                class="btn-close close pull-right"
-                aria-label="Close"
-                (click)="modalRef?.hide()"
-              >
-                <span aria-hidden="true">&times;</span>
-              </button>
-              </div>
-            <div class="modal-body">This is a modal</div>
-          </ng-template>
-
-        </div>
+<div class="row">
+  <div class="w-75 mx-auto">
+    <div class="add-note">
+      <div class="footer">
+        <button class="btn btn-lg btn-outline-primary w-100" (click)="open()">
+          Add Note
+        </button>
       </div>
     </div>
   </div>
-
-  <div class="row">
-    <h3 *ngIf="Notes.length == 0" class="text-center py-4">No notes found</h3>
-    <div class="col-md-3 col-sm-6">
-      <h2 *ngIf="Notes.length > 0">Notes</h2>
-      <div class="note-box" *ngFor="let note of Notes">
-        <div class="note-header">
-          <h5 class="text-center w-100 p-2">{{ note.title }}</h5>
+</div>
+<div class="mt-5">
+  <div class="row main mt-5">
+    @if(notes.length == 0){
+      <div class="alert text-center alert-warning">No notes you have add First..!^</div>
+    }
+    <div class="card h-100" *ngFor="let note of notes; let i = index" style="width: 18rem;">
+      <div class="card-body">
+        <div class="header">
+          <h5 class="card-title">Title: {{note.title}}</h5>
         </div>
-        <div class="note-body">
-          <div placeholder="Write your note here...">
-            {{ note.description }}
+        <span>Description: </span>
+        <p class="card-text"> {{note.description}}</p>
+        <div class="completed"  *ngIf="note.completed == true">
+          <div class="card-overlay">
+            <span class="badge bg-success">Completed!</span>
           </div>
+          <i class="fa fa-trash" (click)="removeNote(note.id ?? -1)"></i>
         </div>
-        <div class="note-footer d-flex justify-content-between">
-          <button class="btn btn-edit">Edit</button>
-          <button class="btn btn-complete">Complete</button>
+        <div *ngIf="!note.completed" class="footer d-flex justify-content-between align-items-center">
+          <button
+            class="btn btn-danger"
+            (click)="removeNote(note.id ?? -1)"
+          >
+            Delete
+          </button>
+          <button
+            class="btn btn-complete"
+            (click)="complete(note)"
+          >
+            Complete
+          </button>
         </div>
       </div>
     </div>

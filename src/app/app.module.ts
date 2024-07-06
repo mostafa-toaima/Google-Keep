@@ -11,7 +11,11 @@ import { NotesComponent } from './components/notes/notes.component';
 import { RemindersComponent } from './components/reminders/reminders.component';
 import { MainComponent } from './main/main.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { TooltipModule } from 'ngx-bootstrap/tooltip';;
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { AddNoteComponent } from './components/add-note/add-note.component';
+import { SearchPipe } from './core/pipes/search.pipe';
+import { NotfoundComponent } from './components/notfound/notfound.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +25,9 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';;
     NotesComponent,
     RemindersComponent,
     MainComponent,
+    AddNoteComponent,
+    SearchPipe,
+    NotfoundComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,8 +35,7 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';;
     ReactiveFormsModule,
     FormsModule,
     BrowserAnimationsModule,
-    TooltipModule.forRoot(),
-    ModalModule.forRoot(),
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
