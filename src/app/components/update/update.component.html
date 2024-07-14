@@ -1,0 +1,46 @@
+<div class="container">
+  <form (ngSubmit)="updateNote()">
+  <div class="modal-header">
+    <h2>Create New Note</h2>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="activeModal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+      <label for="Title" class="fw-bold">Title:</label>
+      <input
+        name="title"
+        required
+        type="text"
+        id="title"
+        class="input-group mb-3"
+        [(ngModel)]="newNote.title"
+        placeholder="write your title here..."
+      />
+
+      <label for="Descriptione" class="fw-bold">Description:</label>
+      <textarea
+        name="description"
+        required
+        type="text"
+        id="description"
+        class="input-group mb-3"
+        [(ngModel)]="newNote.description"
+        placeholder="write your description here..."
+      ></textarea>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-outline-secondary"
+          (click)="activeModal.close('Close click')"
+        >
+          Close
+        </button>
+        <button class="btn btn-outline-primary" type="submit">Update</button>
+      </div>
+  </form>
+</div>

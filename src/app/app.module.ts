@@ -16,6 +16,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AddNoteComponent } from './components/add-note/add-note.component';
 import { SearchPipe } from './core/pipes/search.pipe';
 import { NotfoundComponent } from './components/notfound/notfound.component';
+import { UpdateComponent } from './components/update/update.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
     AddNoteComponent,
     SearchPipe,
     NotfoundComponent,
+    UpdateComponent,
   ],
   imports: [
     BrowserModule,

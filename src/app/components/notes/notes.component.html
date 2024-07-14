@@ -12,33 +12,36 @@
 <div class="mt-5">
   <div class="row main mt-5">
     @if(notes.length == 0){
-      <div class="alert text-center alert-warning">No notes you have add First..!^</div>
+    <div class="alert text-center alert-warning">
+      No notes you have add First..!^
+    </div>
     }
-    <div class="card h-100" *ngFor="let note of notes; let i = index" style="width: 18rem;">
+    <div
+      class="card h-100"
+      *ngFor="let note of notes; let i = index"
+      style="width: 18rem"
+    >
       <div class="card-body">
         <div class="header">
-          <h5 class="card-title">Title: {{note.title}}</h5>
+          <h5 class="card-title">Title: <span class="bold">{{ note.title }}</span></h5>
         </div>
         <span>Description: </span>
-        <p class="card-text"> {{note.description}}</p>
-        <div class="completed"  *ngIf="note.completed == true">
+        <p class="card-text">{{ note.description }}</p>
+        <div class="completed" *ngIf="note.completed == true">
           <div class="card-overlay">
             <span class="badge bg-success">Completed!</span>
           </div>
           <i class="fa fa-trash" (click)="removeNote(note.id ?? -1)"></i>
         </div>
-        <div *ngIf="!note.completed" class="footer d-flex justify-content-between align-items-center">
-          <button
-            class="btn btn-danger"
-            (click)="removeNote(note.id ?? -1)"
-          >
+        <div
+          *ngIf="!note.completed"
+          class="footer d-flex justify-content-between align-items-center"
+        >
+          <button class="btn btn-danger" (click)="removeNote(note.id ?? -1)">
             Delete
           </button>
-          <button
-            class="btn btn-complete"
-            (click)="complete(note)"
-          >
-            Complete
+          <button class="btn btn-complete" (click)="update(note.id)">
+            Update
           </button>
         </div>
       </div>

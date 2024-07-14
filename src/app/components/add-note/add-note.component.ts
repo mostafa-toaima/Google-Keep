@@ -9,7 +9,7 @@ import { Note } from '../../core/interfices/Note';
   styleUrl: './add-note.component.scss',
 })
 export class AddNoteComponent {
-// activeModal = inject(NgbActiveModal);
+  // activeModal = inject(NgbActiveModal);
 
   newNote: Note = {
     id: 0,
@@ -24,7 +24,6 @@ export class AddNoteComponent {
   ) {}
 
   createNote() {
-    this.newNote.id = new Date().getTime(); // Assign a unique ID
     this._SharedNotesService.create(this.newNote);
     this.activeModal.close();
   }
